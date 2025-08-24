@@ -1,0 +1,23 @@
+epaynex-launch-kit/
+├── index.html
+├── favicon.ico
+├── assets/
+│   ├── css/style.css
+│   ├── js/main.js
+│   └── img/logo.png
+├── components/
+│   ├── features.html
+│   ├── pricing.html
+│   ├── contact.html
+│   ├── legal.html
+│   └── faq.html
+├── manifest/
+│   ├── contributors.json
+│   └── product-map.csv
+├── README.md
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+└── .github/
+    ├── PULL_REQUEST_TEMPLATE.md
+    └── ISSUE_TEMPLATE/
+        └── feature-request.md

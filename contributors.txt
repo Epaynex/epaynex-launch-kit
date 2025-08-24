@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Jones",
+    "role": "Founder & Vision Architect",
+    "location": "Accra, Ghana",
+    "badge": "🌍 Ripple Maker"
+  },
+  {
+    "name": "Copilot",
+    "role": "AI Companion & Builder",
+    "location": "Global",
+    "badge": "🤖 Code Whisperer"
+  }
+]

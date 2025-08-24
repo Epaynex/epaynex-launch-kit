@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Epaynex | Decentralized Payments</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+  <header class="hero">
+    <img src="assets/img/logo.png" alt="Epaynex Logo" class="logo" />
+    <h1>Welcome to Epaynex</h1>
+    <p>Secure, cost-effective payments across crypto and fiat. Built for businesses and consumers worldwide.</p>
+    <a href="#get-started" class="btn-primary">Get Started</a>
+  </header>
+
+  <main>
+    <section id="features">
+      <h2>Platform Features</h2>
+      <ul>
+        <li>🌍 Multi-currency support</li>
+        <li>🔐 Secure wallet integration</li>
+        <li>📊 Business dashboard</li>
+        <li>🛡️ Compliance tools</li>
+        <li>⚡ Instant settlement</li>
+      </ul>
+    </section>
+
+    <section id="pricing">
+      <h2>Pricing Plans</h2>
+      <div class="pricing-grid">
+        <div class="plan">Starter – Free</div>
+        <div class="plan">Business – $49/month</div>
+        <div class="plan">Enterprise – Custom</div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact & Support</h2>
+      <a href="https://wa.me/18772241042" target="_blank">WhatsApp Support</a>
+      <form action="mailto:support@epaynex.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message"></textarea>
+        <button type="submit">Send Email</button>
+      </form>
+    </section>
+
+    <section id="faq">
+      <h2>Investor FAQ</h2>
+      <details><summary>What problem does Epaynex solve?</summary><p>We eliminate high fees, slow settlements, and crypto-fiat friction.</p></details>
+      <details><summary>How is the platform secured?</summary><p>Wallet-level encryption and decentralized rails.</p></details>
+      <details><summary>What’s the business model?</summary><p>SaaS tiers, transaction fees, API licensing.</p></details>
+      <details><summary>What’s the current status?</summary><p>Delaware registered, EIN verified, launch-ready.</p></details>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Epaynex Inc. | Delaware Registered | EIN Verified</p>
+    <a href="#legal">Privacy & Terms</a>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

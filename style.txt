@@ -1,0 +1,38 @@
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F9FAFB;
+  color: #1F2937;
+}
+
+.hero {
+  text-align: center;
+  padding: 2rem;
+  background-color: #00BFA6;
+  color: white;
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  background-color: #1F2937;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+section {
+  padding: 2rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #1F2937;
+  color: white;
+}
