@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Epaynex | Decentralized Payments</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="hero">
+    <img src="assets/img/logo.png" alt="Epaynex Logo" class="logo" />
+    <h1>Welcome to Epaynex</h1>
+    <p>Secure, cost-effective payments across crypto and fiat. Built for businesses and consumers worldwide.</p>
+    <a href="#get-started" class="btn-primary">Get Started</a>
+  </header>
+
+  <main>
+    <!-- Features Block -->
+    <section id="features">
+      <!-- Include features.html -->
+    </section>
+
+    <!-- Pricing Block -->
+    <section id="pricing">
+      <!-- Include pricing.html -->
+    </section>
+
+    <!-- Contact Block -->
+    <section id="contact">
+      <!-- Include contact.html -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Epaynex Inc. | Delaware Registered | EIN Verified</p>
+    <a href="components/legal.html">Privacy & Terms</a>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

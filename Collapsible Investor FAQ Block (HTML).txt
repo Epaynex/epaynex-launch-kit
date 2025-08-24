@@ -1,0 +1,19 @@
+<section class="faq">
+  <h2>Investor FAQ</h2>
+  <details>
+    <summary>What problem does Epaynex solve?</summary>
+    <p>We eliminate high fees, slow settlements, and crypto-fiat friction for global businesses and consumers.</p>
+  </details>
+  <details>
+    <summary>How is the platform secured?</summary>
+    <p>We use wallet-level encryption, decentralized rails, and optional KYC/AML modules for compliance.</p>
+  </details>
+  <details>
+    <summary>What’s the business model?</summary>
+    <p>SaaS tiers, transaction fees, and API licensing for enterprise integrations.</p>
+  </details>
+  <details>
+    <summary>What’s the current status?</summary>
+    <p>Registered in Delaware, EIN verified, platform ready for deployment. Seeking seed funding for integrations and outreach.</p>
+  </details>
+</section>

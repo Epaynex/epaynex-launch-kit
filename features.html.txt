@@ -1,0 +1,25 @@
+<section class="features">
+  <h2>Platform Features</h2>
+  <div class="feature-grid">
+    <div class="feature-item">
+      <h3>🌍 Multi-Currency Support</h3>
+      <p>Send and receive payments in BTC, ETH, USDT, and major fiat currencies with seamless conversion.</p>
+    </div>
+    <div class="feature-item">
+      <h3>🔐 Secure Wallet Integration</h3>
+      <p>Connect MetaMask, WalletConnect, or hardware wallets with end-to-end encryption.</p>
+    </div>
+    <div class="feature-item">
+      <h3>📊 Business Dashboard</h3>
+      <p>Track transactions, manage invoices, and view analytics in real time.</p>
+    </div>
+    <div class="feature-item">
+      <h3>🛡️ Compliance Tools</h3>
+      <p>Built-in KYC/AML modules for global regulatory alignment.</p>
+    </div>
+    <div class="feature-item">
+      <h3>⚡ Instant Settlement</h3>
+      <p>Payments settle in seconds—no intermediaries, no delays.</p>
+    </div>
+  </div>
+</section>

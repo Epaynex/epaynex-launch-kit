@@ -1,0 +1,32 @@
+<section class="pricing">
+  <h2>Pricing Plans</h2>
+  <div class="pricing-grid">
+    <div class="plan">
+      <h3>Starter</h3>
+      <p>Free for individuals</p>
+      <ul>
+        <li>Crypto wallet integration</li>
+        <li>Basic analytics</li>
+        <li>Email support</li>
+      </ul>
+    </div>
+    <div class="plan">
+      <h3>Business</h3>
+      <p>$49/month</p>
+      <ul>
+        <li>Multi-user dashboard</li>
+        <li>Fiat payment gateway</li>
+        <li>Priority support</li>
+      </ul>
+    </div>
+    <div class="plan">
+      <h3>Enterprise</h3>
+      <p>Custom pricing</p>
+      <ul>
+        <li>Dedicated onboarding</li>
+        <li>Custom integrations</li>
+        <li>Compliance consulting</li>
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+<section class="contact">
+  <h2>Contact & Support</h2>
+  <p>We’re here to help—reach out anytime.</p>
+  <div class="contact-methods">
+    <a href="https://wa.me/18772241042" target="_blank" class="btn-whatsapp">WhatsApp Support</a>
+    <form action="mailto:support@epaynex.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message"></textarea>
+      <button type="submit">Send Email</button>
+    </form>
+  </div>
+</section>

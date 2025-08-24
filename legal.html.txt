@@ -1,0 +1,8 @@
+<section class="legal">
+  <h2>Legal & Compliance</h2>
+  <p>Epaynex Inc. is a registered Delaware corporation. EIN and incorporation documents available upon request.</p>
+  <h3>Privacy Policy</h3>
+  <p>We do not store personal data without consent. All transactions are encrypted and anonymized.</p>
+  <h3>Terms of Use</h3>
+  <p>By using our platform, you agree to our terms regarding payment processing, compliance, and dispute resolution.</p>
+</section>
