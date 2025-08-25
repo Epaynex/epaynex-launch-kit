@@ -36,7 +36,22 @@
       </div>
     </section>
 
-    <section id="contact">
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "epaynex.firebaseapp.com",
+    projectId: "epaynex",
+    storageBucket: "epaynex.appspot.com",
+    messagingSenderId: "YOUR_ID",
+    appId: "YOUR_APP_ID"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+  <section id="contact">
       <h2>Contact & Support</h2>
       <a href="https://wa.me/18772241042" target="_blank">WhatsApp Support</a>
       <form action="mailto:support@epaynex.com" method="post" enctype="text/plain">
@@ -73,4 +88,5 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
