@@ -20,7 +20,13 @@
       <!-- Include features.html -->
     </section>
 
-    <!-- Pricing Block -->
+  <form action="/create-checkout-session" method="POST">
+  <button type="submit" style="padding: 12px 24px; background-color: #635bff; color: white; border: none; border-radius: 6px;">
+    Join & Pay – $10 Early Access
+  </button>
+  </form>
+
+  <!-- Pricing Block -->
     <section id="pricing">
       <!-- Include pricing.html -->
     </section>
@@ -39,4 +45,5 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
