@@ -21,6 +21,10 @@
     </section>
 
   <form action="/create-checkout-session" method="POST">
+<a href="https://paystack.shop/pay/9unrjs5x1y" target="_blank" style="padding: 12px 24px; background-color: #0aa; color: white; border-radius: 6px; text-decoration: none;">
+  Join & Pay – ₵100 Early Access
+</a>
+
   <button type="submit" style="padding: 12px 24px; background-color: #635bff; color: white; border: none; border-radius: 6px;">
     Join & Pay – $10 Early Access
   </button>
@@ -45,5 +49,6 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
 
