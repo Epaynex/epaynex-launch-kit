@@ -40,7 +40,18 @@
   color: #333;
 }
 
+.btn-secondary:hover 
+  .btn-primary:hover {
+  background-color: #0056b3;
+  transform: scale(1.02);
+}
+
 .btn-secondary:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.02);
+}
+
+  {
   background-color: #e0e0e0;
 }
 
@@ -122,14 +133,13 @@
     <section id="voice-intro" class="fade-in">
   <h2>Founder Voice Intro</h2>
   <audio controls>
-    <source src="assets/founder-pitch.mp3" type="audio/mpeg">
-    <div class="cta-buttons">
-  <a href="#get-started" class="btn-primary">Get Started</a>
-  <a href="https://wa.me/18772241042?text=Hi%20Epaynex%20Team%2C%20I%20have%20a%20question%20about%20your%20platform." class="btn-secondary" target="_blank">Talk to Us</a>
-</div>
-
+    <source src="assets/founder-intro.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
+  <div class="cta-buttons">
+    <a href="#get-started" class="btn-primary">Get Started</a>
+    <a href="https://wa.me/18772241042?text=Hi%20Epaynex%20Team%2C%20I%20have%20a%20question%20about%20your%20platform." class="btn-secondary" target="_blank">Talk to Us</a>
+  </div>
 </section>
 
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
@@ -147,24 +157,24 @@
   firebase.initializeApp(firebaseConfig);
 </script>
 
-  <section id="contact">
-      <h2>Contact & Support</h2>
-      <a href="https://wa.me/18772241042?text=Hi%20Epaynex%20Team%2C%20I%20have%20a%20question%20about%20your%20platform." target="_blank">WhatsApp Support</a>
-      <form action="mailto:support@epaynex.com" method="post" enctype="text/plain">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message"></textarea>
-        <button type="submit">Send Email</button>
-      </form>
-    </section>
+<form action="mailto:support@epaynex.com" method="post" enctype="text/plain">
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="email" placeholder="Your Email" required />
+  <textarea name="message" placeholder="Your Message" required></textarea>
+  <button type="submit">Send Email</button>
+</form>
+</section>
+    
+<section id="faq">
+  <h2>Investor FAQ</h2>
+  <ul>
+    <li><strong>What problem does Epaynex solve?</strong><br>We simplify global payments by bridging crypto and fiat with instant settlement.</li>
+    <li><strong>How is the platform secured?</strong><br>End-to-end encryption, wallet isolation, and compliance-grade monitoring.</li>
+    <li><strong>What’s the business model?</strong><br>SaaS subscription + transaction fees across fiat and crypto rails.</li>
+    <li><strong>What’s the current status?</strong><br>Live homepage, CRM automation, and onboarding pipeline activated.</li>
+  </ul>
+</section>
 
-    <section id="faq">
-      <h2>Investor FAQ</h2>
-      <details><summary>What problem does Epaynex solve?</summary><p>We eliminate high fees, slow settlements, and crypto-fiat friction.</p></details>
-      <details><summary>How is the platform secured?</summary><p>Wallet-level encryption and decentralized rails.</p></details>
-      <details><summary>What’s the business model?</summary><p>SaaS tiers, transaction fees, API licensing.</p></details>
-      <details><summary>What’s the current status?</summary><p>Delaware registered, EIN verified, launch-ready.</p></details>
-    </section>
   </main>
 
   <section id="flyers">
@@ -184,6 +194,7 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
 
 
