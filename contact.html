@@ -11,3 +11,58 @@
     </form>
   </div>
 </section>
+<!-- Paystack Inline Script -->
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+  // Read plan from URL (?plan=starter|business|enterprise)
+  const params = new URLSearchParams(location.search);
+  const plan = (params.get('plan') || 'starter').toLowerCase();
+
+  const plans = {
+    starter: { name: 'Starter', price: 0 },
+    business: { name: 'Business', price: 4900 }, // in GHS kobo equivalent (e.g., 49.00 GHS = 4900 pesewas)
+    enterprise: { name: 'Enterprise', price: 0 } // custom pricing
+  };
+
+  const chosen = plans[plan] || plans.starter;
+  document.getElementById('planName').textContent = chosen.name;
+  document.getElementById('planPrice').textContent = chosen.price === 0 ? 'Free' : `GHS ${(chosen.price/100).toFixed(2)}`;
+
+  document.getElementById('checkout-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    if (chosen.price === 0) {
+      // Free plan — skip payment
+      const orderId = 'EPX-' + Math.random().toString(36).slice(2, 8).toUpperCase();
+      const email = document.getElementById('email').value;
+      redirectToThankYou(orderId, email);
+      return;
+    }
+
+    const handler = PaystackPop.setup({
+      key: 'pk_live_f04146677764ca4fbbddb05a4a2f4e08c5233b36', // Replace with your Live Public Key
+      email: document.getElementById('email').value,
+      amount: chosen.price, // in pesewas
+      currency: 'GHS', // or 'USD', 'NGN' depending on your account
+      ref: 'EPX-' + Math.floor((Math.random() * 1000000000) + 1),
+      callback: function(response) {
+        // Payment successful
+        redirectToThankYou(response.reference, document.getElementById('email').value);
+      },
+      onClose: function() {
+        alert('Payment window closed.');
+      }
+    });
+    handler.openIframe();
+  });
+
+  function redirectToThankYou(orderId, email) {
+    const next = new URL('/thank-you.html', location.origin);
+    next.searchParams.set('order', orderId);
+    next.searchParams.set('plan', chosen.name);
+    next.searchParams.set('price', chosen.price === 0 ? 'Free' : `GHS ${(chosen.price/100).toFixed(2)}`);
+    next.searchParams.set('email', email);
+    location.href = next.toString();
+  }
+</script>
+
