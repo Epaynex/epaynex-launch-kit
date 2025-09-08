@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout | Epaynex</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin:0; padding:0; }
+    .wrap { max-width: 960px; margin: 24px auto; padding: 0 16px; }
+    .checkout { display:grid; grid-template-columns: 1.2fr .8fr; gap:24px; }
+    @media (max-width: 800px){ .checkout { grid-template-columns:1fr; } }
+    .card { background:#fff; border:1px solid #eee; border-radius:10px; padding:16px; box-shadow:0 2px 6px rgba(0,0,0,.06); }
+    .order-summary h3 { margin-top:0; }
+    .trust-badges { display:flex; gap:12px; align-items:center; margin:12px 0 4px; }
+    .trust-badges img { height:28px; }
+    .field { margin-bottom:12px; }
+    .field label { display:block; font-weight:600; margin-bottom:6px; }
+    .field input { width:100%; padding:10px; border:1px solid #ddd; border-radius:6px; }
+    .pay-btn { width:100%; padding:12px 16px; background:#28a745; color:white; font-weight:800; border:none; border-radius:8px; cursor:pointer; }
+    .pay-btn:hover { background:#218838; }
+    .muted { color:#666; font-size:.9rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Secure Checkout</h1>
+    <div class="checkout">
+      <div class="card">
+        <h2>Billing details</h2>
+        <form id="checkout-form">
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" name="name" required autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="card">Card number</label>
+            <input id="card" name="card" inputmode="numeric" placeholder="4242 4242 4242 4242" required />
+          </div>
+
+          <div class="trust-badges">
+            <img src="/images/ssl-secure.png" alt="SSL Secure" />
+            <img src="/images/pci-compliant.png" alt="PCI Compliant" />
+            <img src="/images/verified-partner.png" alt="Verified Partner" />
+          </div>
+          <p class="muted">All payments are encrypted. We never store full card numbers.</p>
+
+          <button class="pay-btn" type="submit">Pay now</button>
+        </form>
+      </div>
+
+      <aside class="card order-summary">
+        <h3>Order summary</h3>
+        <p><strong>Plan:</strong> <span id="planName">—</span></p>
+        <p><strong>Price:</strong> <span id="planPrice">—</span></p>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    // Read plan from URL (?plan=starter|business|enterprise)
+    const params = new URLSearchParams(location.search);
+    const plan = (params.get('plan') || 'starter').toLowerCase();
+
+    const plans = {
+      starter: { name: 'Starter', price: 'Free' },
+      business: { name: 'Business', price: '$49/month' },
+      enterprise: { name: 'Enterprise', price: 'Custom' }
+    };
+
+    const chosen = plans[plan] || plans.starter;
+    document.getElementById('planName').textContent = chosen.name;
+    document.getElementById('planPrice').textContent = chosen.price;
+
+    // Simulated payment -> redirect to thank-you with order number
+    document.getElementById('checkout-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const orderId = 'EPX-' + Math.random().toString(36).slice(2, 8).toUpperCase();
+      const email = document.getElementById('email').value;
+      const next = new URL('/thank-you.html', location.origin);
+      next.searchParams.set('order', orderId);
+      next.searchParams.set('plan', chosen.name);
+      next.searchParams.set('price', chosen.price);
+      next.searchParams.set('email', email);
+      // Replace this with your real gateway promise/redirect.
+      location.href = next.toString();
+    });
+  </script>
+</body>
+</html>
