@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You | Epaynex</title>
+  <style>
+    body { font-family: sans-serif; margin:0; padding:0; }
+    .wrap { max-width: 600px; margin: 40px auto; padding: 0 16px; }
+    .confirmation-box { background:#f9f9f9; padding:20px; border-radius:8px; text-align:center; }
+    .cta { display:inline-block; background:#007bff; color:#fff; padding:10px 16px; border-radius:6px; text-decoration:none; font-weight:700; margin-top:16px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="confirmation-box" id="confirmation">
+      <h1>Verifying your payment...</h1>
+    </div>
+  </div>
+
+  <script>
+    (async () => {
+      const p = new URLSearchParams(location.search);
+      const ref = p.get('order');
+      const email = p.get('email');
+      const price = p.get('price');
+
+      if (!ref) {
+        document.getElementById('confirmation').innerHTML = '<h1>No payment reference found.</h1>';
+        return;
+      }
+
+      const resp = await fetch(`/api/verify?reference=${encodeURIComponent(ref)}`);
+      const data = await resp.json();
+
+      if (data.ok) {
+        document.getElementById('confirmation').innerHTML = `
+          <h1>Thank you for your purchase!</h1>
+          <p>Your order number is <strong>${ref}</strong>.</p>
+          <p>Price: <strong>${price}</strong></p>
+          <p>We’ve sent a confirmation email to <strong>${email}</strong>.</p>
+          <a href="/" class="cta">Go to Homepage</a>
+        `;
+      } else {
+        document.getElementById('confirmation').innerHTML = `
+          <h1>Payment not verified yet</h1>
+          <p>Please contact support with reference: <strong>${ref}</strong></p>
+        `;
+      }
+    })();
+  </script>
+</body>
+</html>
