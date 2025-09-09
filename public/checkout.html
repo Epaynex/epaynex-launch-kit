@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout | Epaynex</title>
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    body { font-family: sans-serif; margin:0; padding:0; }
+    .wrap { max-width: 800px; margin: 20px auto; padding: 0 16px; }
+    .trust-badges { display:flex; gap:12px; margin:12px 0; flex-wrap:wrap; }
+    .trust-badges img { height:36px; }
+    .field { margin-bottom:12px; }
+    .field label { display:block; font-weight:600; margin-bottom:6px; }
+    .field input { width:100%; padding:10px; border:1px solid #ccc; border-radius:6px; }
+    .pay-btn { width:100%; padding:12px; background:#28a745; color:white; font-weight:700; border:none; border-radius:6px; cursor:pointer; }
+    .pay-btn:hover { background:#218838; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Secure Checkout</h1>
+    <form id="checkout-form">
+      <div class="field">
+        <label for="name">Full name</label>
+        <input id="name" name="name" required />
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+      </div>
+
+      <div class="trust-badges">
+        <img src="/images/ssl-secure.png" alt="SSL Secure" />
+        <img src="/images/pci-compliant.png" alt="PCI Compliant" />
+        <img src="/images/verified-partner.png" alt="Verified Partner" />
+      </div>
+      <p>All payments are encrypted. We never store full card numbers.</p>
+
+      <button class="pay-btn" type="submit">Pay now</button>
+    </form>
+  </div>
+
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <script>
+    document.getElementById('checkout-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const amount = 4900; // amount in pesewas (GHS 49.00)
+      const ref = 'EPX-' + Math.floor((Math.random() * 1000000000) + 1);
+
+      const handler = PaystackPop.setup({
+        key: 'pk_live_YOUR_PUBLIC_KEY', // Replace with your Paystack public key
+        email: email,
+        amount: amount,
+        currency: 'GHS',
+        ref: ref,
+        callback: function(response) {
+          window.location.href = `/thank-you.html?order=${response.reference}&price=GHS%2049.00&email=${encodeURIComponent(email)}`;
+        },
+        onClose: function() {
+          alert('Payment window closed.');
+        }
+      });
+      handler.openIframe();
+    });
+  </script>
+</body>
+</html>
